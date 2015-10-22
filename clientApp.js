@@ -2,6 +2,12 @@
 //isti string reversed
 
 var net = require('net');
+var readline = require('readline');
+
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 var HOST = '127.0.0.1';
 var PORT = 6969;
@@ -12,7 +18,10 @@ var PORT = 6969;
 var client = new net.Socket();
 client.connect(PORT, HOST, function() {
    console.log('CONNECTED TO: ' + HOST + ':' + PORT); 
-   client.write('Chupko <3');
+   rl.question(">", function(linija) { 
+    client.write(linija);
+    rl.close();
+   });
 });
 
 
