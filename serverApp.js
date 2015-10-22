@@ -3,7 +3,7 @@
 var net = require('net');
 
 //host i port
-var HOST = '127.0.0.1';
+var HOST = '192.168.1.247';
 var PORT = 6969;
 
 function reverse(string) {
@@ -22,7 +22,7 @@ net.createServer(function(sock) {
     });
     
     sock.on('close', function(data) {
-        console.log("Veza je prekinuta");
+        console.log("Veza je prekinuta\n*---------------------------------------------------*");
     });
 }).listen(PORT,HOST);
 
