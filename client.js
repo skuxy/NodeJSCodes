@@ -6,7 +6,7 @@ var client = net.connect({
     },
     function() {
         console.log('spojen sam!');
-        cleint.write('world!\r\n');
+        client.write('world!\r\n');
 });
 client.on('data', function(data) {
     console.log(data.toString());
