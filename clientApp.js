@@ -9,15 +9,13 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-var HOST = '127.0.0.1';
+var HOST = '192.168.1.247';
 var PORT = 6969;
-
-
     
-    //spaja se i salje promptani string
+//spaja se i salje promptani string
 var client = new net.Socket();
 client.connect(PORT, HOST, function() {
-   console.log('CONNECTED TO: ' + HOST + ':' + PORT); 
+   console.log('Spojen na: ' + HOST + ':' + PORT); 
    rl.question(">", function(linija) { 
     client.write(linija);
     rl.close();
